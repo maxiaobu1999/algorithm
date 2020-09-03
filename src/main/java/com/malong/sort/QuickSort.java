@@ -1,5 +1,7 @@
 package com.malong.sort;
 
+import java.util.Scanner;
+
 /**
  * 快排
  * 挖坑填数：https://blog.csdn.net/morewindows/article/details/6684558
@@ -20,11 +22,11 @@ package com.malong.sort;
  * 小数组切换插入排序：小数组插入排序比快排快
  * 三取样切分：基准点取中位数
  * 熵最优的排序：重复元素。三分分治
- *
+ * <p>
  * 如随机选择基准数，区间内数据较少时直接用另的方法排序以减小递归深度。
  */
 public class QuickSort {
-    static int[] mArr = new int[]{5, 4, 4, 3, 2, 1, 0, 9};
+    static int[] mArr = new int[]{5, 4, 4, 3, 2, 1, 0, 9,5};
 
     public static void main(String[] args) {
         quickSort(mArr, 0, mArr.length - 1);
@@ -36,7 +38,7 @@ public class QuickSort {
     /**
      * 将数组的某一段元素进行划分，小的在左边，大的在右边
      * left为基准值
-     *
+     * <p>
      * 挖坑填数
      * <1> 首先从数列的右边开始往左找，设下标为i，也就是i--操作，找到第一个比基准数小的值，让他与基准数交换；
      * <2> 接着开始从左往右找，设下标为j，也就是j++，找到第一个比基准数大的值，让他与基准数交换位置；
@@ -94,6 +96,23 @@ public class QuickSort {
         quickSort(arr, left, mid);//左侧按照快排思路，递归
         quickSort(arr, mid + 1, right);//右侧按照快排思路，递归
     }
+
+//    static   void fastSort(String[] strs, int l, int r) {
+//         if(l >= r) return;
+//         int i = l, j = r;
+//         String tmp = strs[i];
+//         while(i < j) {
+//             while((strs[j] + strs[l]).compareTo(strs[l] + strs[j]) >= 0 && i < j) j--;
+//             while((strs[i] + strs[l]).compareTo(strs[l] + strs[i]) <= 0 && i < j) i++;
+//             tmp = strs[i];
+//             strs[i] = strs[j];
+//             strs[j] = tmp;
+//         }
+//         strs[i] = strs[l];
+//         strs[l] = tmp;
+//         fastSort(strs, l, i - 1);
+//         fastSort(strs, i + 1, r);
+//     }
 
 
 }
