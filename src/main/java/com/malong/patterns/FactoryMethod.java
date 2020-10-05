@@ -8,12 +8,19 @@ public class FactoryMethod {
 }
 
 abstract class Product {
+    abstract void use();
 }
 
 class ProductA extends Product {
+    void use() {
+
+    }
 }
 
 class ProductB extends Product {
+    void use(){
+
+    }
 
 }
 
